@@ -33,6 +33,9 @@
             case '1':
                 include_once 'views/registrationView.php';
                 break;
+            case '2':
+                include_once 'views/authView.php';
+                break;
         }
     ?>
 </div>
