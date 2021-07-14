@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once '../models/authModel.php';
 class AuthClass {
     public function isAuth() {
@@ -26,7 +25,6 @@ class AuthClass {
     }
     public function logOut() {
         $_SESSION = [];
-        session_destroy();
     }
 }
 
@@ -36,4 +34,5 @@ if (!empty($_POST['authUser'])) {
 } elseif (!empty($_POST['exitUser'])) {
     $auth->logOut();
 }
-header('Location: ../index.php?page=2');
+include_once "../views/authView.php";
+?>

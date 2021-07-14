@@ -8,6 +8,6 @@ function connect ($host, $dbname, $userName, $password) {
             [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
         );
     } catch (PDOException $e) {
-        echo 'Невозможно установить соединение с базой данных';
+        echo 'Невозможно установить соединение с базой данных'.$e;
     }
 }

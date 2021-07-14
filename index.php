@@ -1,3 +1,6 @@
+<?
+session_start();
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -12,6 +15,7 @@
 </head>
 <body>
 <div class="container">
+    <?if ($_GET['page'] != 2) { ?>
     <div class="row">
         <ul class="nav justify-content-center">
             <li class="nav-item">
@@ -29,6 +33,7 @@
         </ul>
     </div>
     <?
+    }
         switch ($_GET['page']) {
             case '1':
                 include_once 'views/registrationView.php';
