@@ -7,7 +7,7 @@ class Router
     private $path;
     private $args = [];
 
-    // получаем хранилище
+    // получаем хранилище (делаем хранилище доступным в текущем классе)
     function __construct($registry) {
         $this->registry = $registry;
     }

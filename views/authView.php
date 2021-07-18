@@ -1,3 +1,6 @@
+<?php
+var_dump($_SESSION);
+?>
 <!doctype html>
 <html lang="ru">
 <head>
