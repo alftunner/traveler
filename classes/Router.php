@@ -1,20 +1,18 @@
 <?php
+// класс роутера
 
+Class Router {
 
-class Router
-{
-    private $registry;
     private $path;
-    private $args = [];
+    private $args = array();
 
-    // получаем хранилище (делаем хранилище доступным в текущем классе)
-    function __construct($registry) {
-        $this->registry = $registry;
+    function __construct() {
+
     }
 
     // задаем путь до папки с контроллерами
     function setPath($path) {
-        $path = trim($path, '/\\');
+        $path = rtrim($path, '/\\');
         $path .= DS;
         // если путь не существует, сигнализируем об этом
         if (is_dir($path) == false) {
@@ -84,7 +82,7 @@ class Router
 
         // Создаём экземпляр контроллера
         $class = 'Controller_' . $controller;
-        $controller = new $class($this->registry);
+        $controller = new $class();
 
         // Если экшен не существует - 404
         if (is_callable(array($controller, $action)) == false) {
